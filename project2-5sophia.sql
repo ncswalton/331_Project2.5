@@ -1,4 +1,4 @@
----------------------REMOVE COLUMNS AND CREAT UDT FOR STOCK.DATA-------------------------------------
+---------------------REMOVE COLUMNS AND CREATE UDT FOR STOCK.DATA-------------------------------------
 USE PrestigeCars
 GO
 CREATE SCHEMA Udt;
