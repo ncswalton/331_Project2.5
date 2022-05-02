@@ -1,4 +1,4 @@
-USE PrestigeCars
+SUSE PrestigeCars
 
 GO
 CREATE SCHEMA Udt

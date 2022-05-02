@@ -1,14 +1,14 @@
 ---------------------REMOVE COLUMNS AND CREATE UDT FOR STOCK.DATA-------------------------------------
 USE PrestigeCars
-GO
-CREATE SCHEMA Udt;
-GO
+--GO
+--CREATE SCHEMA Udt;
+--GO
 
 ALTER TABLE Data.Stock
 DROP COLUMN BuyerComments -- i chose to delete this bc most custoomers haven't left comments so it's not a very useful column
 
 ALTER TABLE Data.Stock
-DROP COLUMN TimeBought -- every row has the same time this is very unlikely and seems like an anomoly 
+DROP COLUMN TimeBought -- every row has the same time this is very unlikely and seems like an anomaly 
 
 ALTER TABLE Data.Stock
 ADD StockID smallint NOT NULL IDENTITY(1,1)
@@ -79,6 +79,7 @@ ALTER COLUMN StockID Udt.PrestigeSmallInt
 ALTER TABLE Data.Stock
 ADD CHECK (TransportInCost > 0)
 
+
 --Reference.SalesCategory may just be removed --
 DROP TABLE IF EXISTS Reference.SalesCatgory 
 
@@ -107,3 +108,6 @@ SELECT
 GO
 
 
+ALTER TABLE Data.Stock
+ADD CONSTRAINT FK_ModelID
+FOREIGN KEY (ModelId) REFERENCES Data.Model(ModelID);
