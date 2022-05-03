@@ -52,9 +52,19 @@ update [data].Make
 set [MakeCountry] = replace([MakeCountry], 'GER', 'DEU')
 
 
--- SalesDetails table - delete erroneous rows
+-- Delete erroneous rows from SalesDetail and 1 erroneous row from Stock
 
-Delete from [Data].[SalesDetails] where SalesDetailsID = 180 and SalesDetailsID = 181 and SalesDetailsID = 216
+-- Delete from [Data].[SalesDetails] where StockID = 205 or StockID = 206 or StockID = 244
+
+Delete from [Data].[Stock] where StockID = 395
+
+delete from [data].Stock where StockCode = '1A80A54C-D98D-41D6-87EE-8F67F3B06FA8'
+delete from [data].Stock where StockCode = '38264675-F235-412B-9B67-8F8CD86CF40D'
+delete from [data].Stock where StockCode = '2EE943CB-2473-4333-8626-FC94FCD0947E'
+
+-- Delete from [data].[Stock] where StockID = 205 and StockID = 206 and StockID = 244
+-- doing this above with StockCode
+
 --todo: delete the rest of the data
 
 -- Stock - add StockID
@@ -66,3 +76,7 @@ end
 --sales IDs: 166 167 197
 
 --sales details ID: 180 181 216
+select * from [data].SalesDetails
+where StockId = 205
+or StockID = 206 
+or StockID
