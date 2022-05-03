@@ -1,4 +1,4 @@
-use PrestigeCars7
+use PrestigeCars8
 go
 
 create or alter PROCEDURE Udt.[CreateConstraints] @UserAuthorizationKey int
@@ -67,7 +67,7 @@ set nocount on
 	alter TABLE Data.model
 	with check add constraint ck_ModelName
 	CHECK (ModelName not LIKE '[^ -~A-Z0-9]') ;
-	end
+
 
 	--Constraints for Data.Pivot
 	--

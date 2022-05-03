@@ -1,4 +1,4 @@
-use PrestigeCars6
+use PrestigeCars8
 go
 drop procedure if exists AddColumns
 go

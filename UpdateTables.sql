@@ -1,4 +1,4 @@
-use PrestigeCars6
+use PrestigeCars8
 
 drop procedure if exists AddData
 go
@@ -42,11 +42,11 @@ select @end = sysdatetime();
 
 end
 
-select * from [data].Country
-select * from [data].make
-select * from [data].Customer
-select * from [data].Model
-select * from [data].Stock
-select * from [data].Sales
-select * from [data].SalesDetails
-select * from [data].SalesRegion
+--select * from [data].Country
+--select * from [data].make
+--select * from [data].Customer
+--select * from [data].Model
+--select * from [data].Stock
+--select * from [data].Sales
+--select * from [data].SalesDetails
+--select * from [data].SalesRegion

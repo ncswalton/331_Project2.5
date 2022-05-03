@@ -1,7 +1,6 @@
-USE PrestigeCars
-
-GO
-CREATE SCHEMA Udt
+use PrestigeCars8
+--GO
+--CREATE SCHEMA Udt
 GO
 -----------this code creates a human resources table that holds data to make a view from the refrence.staff table-----
 

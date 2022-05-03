@@ -2,7 +2,7 @@ Create procedure [dbo].[InsertMarketingCategories]
 as BEGIN
 
 declare @start datetime2,
-		@end datetime 2
+		@end datetime2
 		
 		select @start = sysdatetime();
 set nocount on

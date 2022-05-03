@@ -44,7 +44,7 @@ declare @start datetime2,
 	ALTER COLUMN IsCreditRisk Udt.PrestigeBit
 
 	ALTER TABLE Data.Customer
-	ALTER COLUMN CustomerID Udt.PrestigeSmallInt
+	ALTER COLUMN CustomerID Udt.PrestigeSmallInt not null
 
 	-----------Data.Country------------ 
 	ALTER TABLE Data.Country
@@ -54,23 +54,23 @@ declare @start datetime2,
 	ALTER COLUMN  CountryCode Udt.StringUdt
 
 	ALTER TABLE Data.Country
-	ALTER COLUMN  SalesRegionID Udt.PrestigeSmallInt
+	ALTER COLUMN  SalesRegionID Udt.PrestigeSmallInt not null
 
 	----------Data.Make------------
 	ALTER TABLE Data.Make
-	ALTER COLUMN MakeId Udt.PrestigeSmallInt
+	ALTER COLUMN MakeId Udt.PrestigeSmallInt not null
 
 	ALTER TABLE Data.Make
 	ALTER COLUMN  MakeName Udt.StringUdt
 
 	ALTER TABLE Data.Make
-	ALTER COLUMN  CountryID Udt.PrestigeSmallInt
+	ALTER COLUMN  CountryID Udt.PrestigeSmallInt not null
 
 
 	-------------------Data.Stock----------
 
 	ALTER TABLE Data.Stock
-	ALTER COLUMN ModelID Udt.PrestigeSmallInt
+	ALTER COLUMN ModelID Udt.PrestigeSmallInt not null
 
 	ALTER TABLE Data.Stock
 	ALTER COLUMN Cost Udt.PrestigeMoney
@@ -94,14 +94,14 @@ declare @start datetime2,
 	ALTER COLUMN DateBought Udt.PrestigeDateTime
 
 	ALTER TABLE Data.Stock
-	ALTER COLUMN StockID Udt.PrestigeSmallInt
+	ALTER COLUMN StockID Udt.PrestigeSmallInt not null
 
 	---------------Data.Model------------------
 	ALTER TABLE Data.Model
-	ALTER COLUMN ModelId Udt.PrestigeSmallInt
+	ALTER COLUMN ModelId Udt.PrestigeSmallInt not null 
 
 	ALTER TABLE Data.Model
-	ALTER COLUMN MakeID Udt.PrestigeSmallInt
+	ALTER COLUMN MakeID Udt.PrestigeSmallInt not null
 
 	ALTER TABLE Data.Model
 	ALTER COLUMN ModelName Udt.StringUdt
@@ -114,14 +114,14 @@ declare @start datetime2,
 	ALTER COLUMN SalesRegion Udt.StringUdt
 
 	ALTER TABLE Data. SalesRegion
-	ALTER COLUMN SalesRegionId Udt.PrestigeSmallInt
+	ALTER COLUMN SalesRegionId Udt.PrestigeSmallInt not null
 
  ----------------Data.Sales-----------------
 	ALTER TABLE Data.Sales
-	ALTER COLUMN SalesId Udt.PrestigeSmallInt
+	ALTER COLUMN SalesId Udt.PrestigeSmallInt not null
 
 	ALTER TABLE Data.Sales
-	ALTER COLUMN CustomerId Udt.PrestigeSmallInt
+	ALTER COLUMN CustomerId Udt.PrestigeSmallInt not null
 
 	ALTER TABLE Data.Sales
 	ALTER COLUMN InvoiceNumber Udt.StringUdt
@@ -135,16 +135,16 @@ declare @start datetime2,
 	-------------Data.SalesDetails--------
 
 	ALTER TABLE Data.SalesDetails
-	ALTER COLUMN SalesDetailsID Udt.PrestigeSmallInt
+	ALTER COLUMN SalesDetailsID Udt.PrestigeSmallInt not null
 
 	ALTER TABLE Data.SalesDetails
-	ALTER COLUMN SalesId Udt.PrestigeSmallInt
+	ALTER COLUMN SalesId Udt.PrestigeSmallInt not null
 
 	ALTER TABLE Data.SalesDetails
 	ALTER COLUMN LineItemNumber Udt.PrestigeTinyInt
 
 	ALTER TABLE Data.SalesDetails
-	ALTER COLUMN StockID Udt.PrestigeSmallInt
+	ALTER COLUMN StockID Udt.PrestigeSmallInt not null
 
 	ALTER TABLE Data.SalesDetails
 	ALTER COLUMN SalePrice Udt.PrestigeMoney
