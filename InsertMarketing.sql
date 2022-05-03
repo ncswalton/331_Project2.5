@@ -2,7 +2,7 @@ Create procedure InsertMarketingCategories
 as BEGIN
 set nocount on
 INSERT Test.MarketingCategories
-    ( [MarketingID], [MakeID], [MakeName], [MarketingType])
+    ( [MarketingID], [MakeID], [MarketingType])
 VALUES
     (1, 1, N'Ferrari', N'Sports'),
     (2, 2, N'Porsche', N'Sports'),
