@@ -1,7 +1,7 @@
 Create procedure [dbo].[InsertMarketingCategories]
 as BEGIN
 set nocount on
-INSERT Test.MarketingCategories
+INSERT Udt.MarketingCategories
     ( [MarketingID], [MakeID], [MarketingType])
 VALUES
     (1, 1,  N'Sports')
