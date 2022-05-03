@@ -11,7 +11,7 @@ VALUES
     (4, 3,  N'Sports'),
     (5, 4,  N'Sports')
 ,
-    (6, 4, N'Aston Martin', N'Tourer'),
+    (6, 4,  N'Tourer'),
     (7, 5,  N'Tourer') ,
     (8, 5,  N'Chauffer'),
     (9, 5,  N'Prestige')
