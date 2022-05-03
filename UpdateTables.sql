@@ -6,6 +6,11 @@ create procedure AddData
 as
 begin
 
+declare @end datetime2,
+		@start datetime2
+
+select @start = sysdatetime();
+
 -- Country table
 update data.Country
 set Data.Country.SalesRegionId = Data.SalesRegion.SalesRegionId
@@ -25,6 +30,15 @@ set [data].Make.CountryId = [data].Country.CountryId
 from [data].Make
 inner join [data].Country
 on [data].Make.MakeCountry = [data].Country.CountryISO3
+
+select @end = sysdatetime();
+
+   	    exec Udt.[usp_TrackWorkFlow]
+			@StartTime = @start,
+			@EndTime = @end,
+			@WorkFlowDescription = 'Updating tables with new data',
+			@UserAuthorizationKey = 0,
+			@WorkFlowStepTableRowCount = null
 
 end
 

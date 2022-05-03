@@ -1,8 +1,6 @@
 use PrestigeCars6
-
--- procedure to drop all columns
 /*
-
+procedure to drop all columns
 */
 drop procedure if exists DropColumns
 go

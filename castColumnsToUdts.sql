@@ -10,6 +10,10 @@ CREATE PROCEDURE Project2_5.AlterDataTypes
 AS
 BEGIN
 	
+declare @start datetime2,
+		@end datetime2
+
+		select @start = sysdatetime();
 	SET NOCOUNT ON;
 
     -- Insert statements for procedure here
@@ -250,6 +254,16 @@ BEGIN
 
 		ALTER TABLE Reference.SalesCategory
 		ALTER COLUMN CategoryDescription Udt.LongStringUdt
+
+			select @end = sysdatetime();
+		
+		exec Udt.[usp_TrackWorkFlow]
+			@StartTime = @start,
+			@EndTime = @end,
+			@WorkFlowDescription = 'Casting to UDTs',
+			@UserAuthorizationKey = 0,
+			@WorkFlowStepTableRowCount = null
+
 
 END
 GO

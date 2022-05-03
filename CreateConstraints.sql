@@ -111,3 +111,11 @@ set nocount on
 	foreign key (MakeId)
 	references [data].Make(MakeId)
 
+	select @end = sysdatetime();
+
+	   	    exec Udt.[usp_TrackWorkFlow]
+			@StartTime = @start,
+			@EndTime = @end,
+			@WorkFlowDescription = 'Creating constraints',
+			@UserAuthorizationKey = 0,
+			@WorkFlowStepTableRowCount = null

@@ -1,5 +1,10 @@
 Create procedure [dbo].[InsertMarketingCategories]
 as BEGIN
+
+declare @start datetime2,
+		@end datetime 2
+		
+		select @start = sysdatetime();
 set nocount on
 INSERT Udt.MarketingCategories
     ( [MarketingID], [MakeID], [MarketingType])
@@ -69,6 +74,14 @@ VALUES
 ,
     (36, 26, N'Family')
 
+	select @end = sysdatetime();
+
+	   	    exec Udt.[usp_TrackWorkFlow]
+			@StartTime = @start,
+			@EndTime = @end,
+			@WorkFlowDescription = 'Inserting into Marketing Categories',
+			@UserAuthorizationKey = 0,
+			@WorkFlowStepTableRowCount = null
 END
 
 GO

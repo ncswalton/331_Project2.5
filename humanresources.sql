@@ -43,5 +43,12 @@ CREATE VIEW Reference.StaffHierarchyView
 AS
 SELECT StaffID, Staffname, ManagerID, Department, HierarcyReference
 FROM Data.HumanResources
+
+   --	    exec Udt.[usp_TrackWorkFlow]
+			--@StartTime = @start,
+			--@EndTime = @end,
+			--@WorkFlowDescription = 'Executing LoadStarSchemaData',
+			--@UserAuthorizationKey = 0,
+			--@WorkFlowStepTableRowCount = null
 GO
 
