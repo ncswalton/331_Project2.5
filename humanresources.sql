@@ -35,5 +35,13 @@ SELECT StaffID, Staffname, ManagerID, Department
 FROM Data.HumanResources
 GO
 
+-----------------Creating Refrence.StaffHierarchyView
 
+DROP VIEW IF EXISTS Reference.StaffHierarchyView
+GO
+CREATE VIEW Reference.StaffHierarchyView
+AS
+SELECT StaffID, Staffname, ManagerID, Department, HierarcyReference
+FROM Data.HumanResources
+GO
 
