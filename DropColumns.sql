@@ -7,6 +7,10 @@ go
 create procedure DropColumns
 as
 begin
+declare @start datetime2,
+		@end datetime2
+		
+		select @start = sysdatetime();
 
 -- Make table
 alter table [data].Make
@@ -46,5 +50,13 @@ drop column ModelVariant
 alter table [data].Customer
 drop column Address2
 
+select @end = sysdatetime();
+
+   	    exec Udt.[usp_TrackWorkFlow]
+			@StartTime = @start,
+			@EndTime = @end,
+			@WorkFlowDescription = 'Dropping unneeded columns',
+			@UserAuthorizationKey = 0,
+			@WorkFlowStepTableRowCount = null
 end
 
